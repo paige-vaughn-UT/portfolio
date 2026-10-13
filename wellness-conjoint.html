@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wellness Membership Pricing: Conjoint Analysis Case Study | Paige Vaughn</title>
+<meta name="description" content="A conjoint study and market simulation answering which wellness membership to launch and at what price. Pricing strategy case study by Paige Vaughn.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Paige Vaughn">
+<meta property="og:title" content="Wellness Membership Pricing: Conjoint Analysis Case Study | Paige Vaughn">
+<meta property="og:description" content="A conjoint study and market simulation answering which wellness membership to launch and at what price. Pricing strategy case study by Paige Vaughn.">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0d0e0d">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "Wellness Membership Pricing: Conjoint Analysis Case Study", "description": "A conjoint study and market simulation answering which wellness membership to launch and at what price. Pricing strategy case study by Paige Vaughn.", "author": {"@type": "Person", "name": "Paige Vaughn", "jobTitle": "Product and Marketing Strategist"}}
+</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23dcd0fb'/%3E%3Ctext x='50' y='72' font-family='Impact,sans-serif' font-size='64' text-anchor='middle' fill='%230d0e0d'%3EPV%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================================
+   TOKENS  (same system as the homepage)
+   ========================================================================== */
+:root{
+  --bg:#0d0e0d; --bg-alt:#131513; --fog:#1b1d1b; --card:#161816;
+  --ink:#f3eee4;               /* main text on dark */
+  --muted:#b9b5ab;
+  --line:rgba(243,238,228,.16); --line-strong:rgba(243,238,228,.38);
+  --lilac:#dcd0fb; --lime:#d6f56b; --coral:#ff7b6d;
+  --slate:#dcd0fb; --slate-hover:#eee8ff; --slate-soft:rgba(220,208,251,.10);
+  --terra:#ff7b6d; --terra-text:#ff8f83; --terra-soft:rgba(255,123,109,.10);
+  --on-slate:#0d0e0d; --focus:#d6f56b;
+  --accent:#dcd0fb;            /* per-page accent, set on <body> */
+  --display:"Bebas Neue","Anton","Archivo Narrow",Impact,"Arial Narrow",sans-serif;
+  --sans:"DM Sans","Inter","Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --serif:var(--sans); --mono:var(--sans);
+  --wrap:1520px; --gutter:clamp(16px,2.2vw,32px); --radius:999px; --panel:28px; --card-r:18px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+p{margin:0}
+h1,h2,h3,h4,h5{margin:0;font-family:var(--sans);font-weight:700;letter-spacing:-.005em}
+b{font-weight:700}
+::selection{background:var(--lime);color:#0d0e0d}
+:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:6px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip:focus,.sr-only:focus{position:fixed;left:12px;top:12px;width:auto;height:auto;clip:auto;background:var(--lime);color:#0d0e0d;padding:10px 16px;border-radius:999px;z-index:100;font-weight:700}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gutter)}
+.narrow{max-width:760px;margin:0 auto}
+.mid{max-width:960px;margin:0 auto}
+
+.label{display:inline-block;font-size:.78rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.kicker{font-size:.72rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.mono{font-size:.75rem;letter-spacing:.04em}
+.textlink{text-decoration:none;background:linear-gradient(currentColor,currentColor) 0 100%/100% 1px no-repeat;padding-bottom:2px;transition:background-size .25s ease}
+.textlink:hover{background-size:0% 1px;background-position:100% 100%}
+.btn{display:inline-flex;align-items:center;gap:10px;font-size:.95rem;font-weight:700;text-decoration:none;border-radius:999px;padding:13px 24px;border:1px solid transparent;transition:transform .2s ease,background .2s ease}
+.btn-primary{background:var(--lime);color:#0d0e0d}.btn-primary:hover{background:var(--lilac);transform:translateY(-2px)}
+.btn-ghost{border-color:var(--line-strong);color:var(--ink)}.btn-ghost:hover{background:var(--ink);color:#0d0e0d}
+
+/* ==========================================================================
+   NAV
+   ========================================================================== */
+.nav{position:sticky;top:0;z-index:50;background:rgba(13,14,13,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.nav .wrap{max-width:1520px;display:flex;align-items:center;justify-content:space-between;gap:24px;padding-block:12px}
+.nav__brand{font-weight:500;letter-spacing:.3em;text-transform:uppercase;font-size:.9rem;white-space:nowrap;text-decoration:none}
+.nav__links{display:flex;align-items:center;gap:clamp(16px,3vw,44px);list-style:none;margin:0;padding:0}
+.nav__links a:not(.pill){font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;opacity:.85;transition:opacity .2s}
+.nav__links a:not(.pill):hover{opacity:1}
+.pill{display:inline-flex;align-items:center;gap:10px;background:var(--lime);color:#0d0e0d;padding:10px 18px;border-radius:999px;font-size:.74rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;transition:transform .2s ease,background .2s ease}
+.pill:hover{transform:translateY(-2px);background:#e6ff8a}
+.progress{position:absolute;left:0;bottom:0;height:2px;background:var(--lime);width:0}
+@media(max-width:720px){.nav__links li:not(:last-child){display:none}.nav__brand{letter-spacing:.22em;font-size:.8rem}}
+
+/* ==========================================================================
+   HERO  (type hero = accent panel; photo hero = rounded photo panel)
+   ========================================================================== */
+.hero-type{padding:6px 0 0}
+.hero-type .wrap{max-width:1520px;width:min(100% - 2*var(--gutter),1520px);padding:clamp(24px,4vw,64px);background:var(--accent);color:#0d0e0d;border-radius:var(--panel);display:grid;grid-template-columns:minmax(0,1.9fr) minmax(240px,1fr);column-gap:clamp(24px,4vw,64px);row-gap:clamp(16px,2vw,26px);align-items:end}
+.hero-type .label{grid-column:1/-1;color:#0d0e0d;opacity:.8}
+.hero-type h1{grid-column:1;font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:clamp(3rem,7.2vw,7.4rem);line-height:.9;letter-spacing:.003em;text-wrap:balance}
+.hero-type .deck{grid-column:2;font-size:clamp(1.05rem,1.4vw,1.3rem);line-height:1.5;font-weight:500;padding-top:18px;border-top:1px solid #0d0e0d;max-width:38ch}
+.hero-type .rule{display:none}
+@media(max-width:900px){.hero-type .wrap{grid-template-columns:minmax(0,1fr)}.hero-type h1{overflow-wrap:anywhere}.hero-type h1,.hero-type .deck{grid-column:1}.hero-type .deck{max-width:52ch;margin-top:8px}}
+
+.hero{position:relative;width:min(100% - 2*var(--gutter),1520px);margin:6px auto 0;border-radius:var(--panel);overflow:hidden;background:var(--fog)}
+.hero-img{position:absolute;inset:0;overflow:hidden}
+.hero-img img{width:100%;height:100%;object-fit:cover}
+.hero-img::after{content:"";position:absolute;inset:0;background:rgba(13,14,13,.62)}
+.hero-copy{position:relative;z-index:2;min-height:clamp(520px,80vh,820px);display:flex;align-items:flex-end;padding:clamp(72px,9vw,120px) 0 clamp(28px,4vw,56px)}
+.hero-copy>.wrap{max-width:none;width:100%;padding-inline:clamp(24px,4vw,64px)}
+.hero-copy .label{color:rgba(243,238,228,.8)}
+.hero-copy h1{font-family:var(--display);font-weight:400;text-transform:uppercase;color:#f3eee4;font-size:clamp(2.8rem,6.4vw,6.6rem);line-height:.9;max-width:16ch;margin-top:18px;text-wrap:balance}
+.hero-copy .deck{color:rgba(243,238,228,.88);font-size:clamp(1.05rem,1.5vw,1.3rem);line-height:1.5;max-width:50ch;margin-top:22px}
+.hero-copy .clientmark{width:auto;margin-bottom:26px;display:block}
+.hero-copy .clientmark.knock{filter:brightness(0) invert(1);opacity:.95}
+.hero-copy .clientmark.color{filter:drop-shadow(0 1px 14px rgba(0,0,0,.45))}
+.hero-copy .clientmark.sm{height:30px}.hero-copy .clientmark.md{height:40px}.hero-copy .clientmark.lg{height:62px}
+@media(max-width:620px){.hero-copy .clientmark.sm{height:24px}.hero-copy .clientmark.md{height:32px}.hero-copy .clientmark.lg{height:48px}}
+.hero-credit{position:absolute;right:clamp(24px,4vw,64px);top:20px;z-index:3;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(243,238,228,.75)}
+
+/* ==========================================================================
+   FACTS
+   ========================================================================== */
+.facts{border-bottom:1px solid var(--line);margin-top:10px}
+.facts-grid{display:grid;grid-template-columns:1.45fr 2fr 2.25fr 2.1fr 1.9fr;gap:0;margin:0}
+.facts-grid>div{padding:34px 24px 36px 0}
+.facts-grid>div+div{padding-left:24px;border-left:1px solid var(--line)}
+.facts-grid dt{font-size:.7rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--lime)}
+.facts-grid dd{margin:12px 0 0;font-size:.95rem;line-height:1.55}
+.facts-grid dd.meta{margin-top:10px;font-size:.84rem;line-height:1.45;color:var(--muted)}
+.facts-grid ul{list-style:none;margin:12px 0 0;padding:0}
+.facts-grid li{font-size:.9rem;line-height:1.45;padding:7px 0;border-top:1px solid var(--line)}
+.facts-grid li:first-child{border-top:none;padding-top:0}
+.facts-grid dd.lead{font-size:1.1rem;font-weight:700;line-height:1.3}
+@media(max-width:1000px){.facts-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .facts-grid>div{padding:22px 20px 24px 0;border-top:1px solid var(--line)}
+ .facts-grid>div:nth-child(-n+2){border-top:none}
+ .facts-grid>div:nth-child(odd){border-left:none;padding-left:0}
+ .facts-grid>div:nth-child(even){border-left:1px solid var(--line);padding-left:20px}}
+@media(max-width:560px){.facts-grid{grid-template-columns:1fr}
+ .facts-grid>div{border-left:none!important;padding-left:0!important;border-top:1px solid var(--line)}
+ .facts-grid>div:first-child{border-top:none}}
+
+/* ---------- disclosure ---------- */
+.disclosure{font-size:.9rem;color:var(--muted);padding:16px 20px;border-left:3px solid var(--coral);background:var(--terra-soft);max-width:80ch;border-radius:0 12px 12px 0}
+.disclosure b{color:var(--ink)}
+.disclosure.top{margin:0}
+.dband{border-bottom:1px solid var(--line);padding:24px 0}
+
+/* ==========================================================================
+   CHAPTERS
+   ========================================================================== */
+.ch{padding:clamp(64px,8vw,112px) 0;border-bottom:1px solid var(--line)}
+.ch.tight{padding:clamp(48px,6vw,80px) 0}
+.ch.ground{background:var(--bg-alt)}
+.ch-head{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,9fr);gap:20px 40px;align-items:start;margin-bottom:clamp(32px,4vw,56px)}
+.ch-num{font-size:.78rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);padding-top:10px;display:flex;align-items:baseline;gap:14px}
+.ch-num i{font-style:normal;color:var(--lime)}
+.ch-head h2{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:clamp(2.3rem,4.6vw,4rem);line-height:.95;letter-spacing:.005em;max-width:28ch;text-wrap:balance}
+.ch-head .standfirst{grid-column:2;font-size:1.12rem;line-height:1.65;color:var(--muted);max-width:64ch;margin-top:20px}
+@media(max-width:900px){.ch-head{grid-template-columns:1fr;margin-bottom:28px}.ch-num{padding-top:0}.ch-head .standfirst{grid-column:1;font-size:1.02rem}}
+
+.prose{max-width:66ch}
+.prose p{font-size:1.1rem;line-height:1.7}
+.prose p+p{margin-top:18px}
+.prose .muted,.muted{color:var(--muted)}
+.cols2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 56px}
+.cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px 48px}
+@media(max-width:900px){.cols2,.cols3{grid-template-columns:1fr;gap:32px}}
+.split{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(28px,5vw,72px);align-items:start}
+.split.rev{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
+@media(max-width:900px){.split,.split.rev{grid-template-columns:1fr;gap:28px}}
+.split:has(>figure.fig){grid-template-columns:calc((100% - 40px)/4) minmax(0,5fr) minmax(0,4fr);gap:20px 40px;align-items:start}
+.split:has(>figure.fig)>div:first-child{grid-column:2}
+.split:has(>figure.fig)>figure.fig{grid-column:3}
+@media(max-width:900px){.split:has(>figure.fig){grid-template-columns:1fr;gap:28px}.split:has(>figure.fig)>div:first-child,.split:has(>figure.fig)>figure.fig{grid-column:auto}}
+
+/* ---------- statement (big pull line) ---------- */
+.statement{padding:clamp(72px,11vw,150px) 0;border-bottom:1px solid var(--line)}
+.statement p{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:clamp(2.6rem,6.2vw,6.2rem);line-height:.92;max-width:20ch;text-wrap:balance}
+.statement .attrib{margin-top:32px;padding-top:18px;border-top:1px solid var(--line);font-family:var(--sans);text-transform:none;font-size:1rem;line-height:1.6;color:var(--muted);max-width:60ch;letter-spacing:0}
+.statement .label{margin-bottom:22px}
+.statement.ink{margin:clamp(40px,5vw,72px) auto;width:min(100% - 2*var(--gutter),1520px);border:0;border-radius:var(--panel);background:var(--accent);color:#0d0e0d;padding:clamp(40px,7vw,104px) 0}
+.statement.ink .label{color:#0d0e0d;opacity:.8}
+.statement.ink .attrib{border-top-color:rgba(13,14,13,.35);color:#0d0e0d;opacity:.85;font-weight:500}
+.statement.ink .wrap{max-width:none;padding-inline:clamp(24px,5vw,80px)}
+.statement .wrap{display:grid;grid-template-columns:minmax(0,1.9fr) minmax(240px,1fr);column-gap:clamp(24px,4vw,64px);row-gap:clamp(16px,2vw,26px);align-items:end}
+.statement .label{grid-column:1/-1;margin-bottom:0}
+.statement p:not(.attrib){grid-column:1;max-width:none;font-size:clamp(2.5rem,5.4vw,5.6rem);line-height:.92}
+.statement .attrib{grid-column:2;margin-top:0;max-width:38ch}
+.statement .wrap:not(:has(.attrib)) p{grid-column:1/-1}
+.statement.ink{padding:clamp(32px,5vw,72px) 0}
+@media(max-width:900px){.statement .wrap{grid-template-columns:minmax(0,1fr)}.statement p:not(.attrib),.statement .attrib{grid-column:1}.statement .attrib{max-width:52ch}}
+
+/* ---------- pull number ---------- */
+.bignum{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:center}
+.bignum b{font-family:var(--display);font-weight:400;font-size:clamp(6rem,16vw,14rem);line-height:.8;color:var(--accent)}
+.bignum .say{font-size:1.2rem;line-height:1.5;max-width:36ch}
+.bignum .say small{display:block;margin-top:12px;font-size:.95rem;color:var(--muted);line-height:1.6}
+@media(max-width:700px){.bignum{grid-template-columns:1fr;gap:16px}}
+
+/* ---------- evidence vs decision ---------- */
+.ed{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;border-top:1px solid var(--ink)}
+.ed>div{padding:34px 44px 38px 0}
+.ed>div+div{padding:32px 32px 36px 36px;background:var(--slate-soft);border-radius:0 0 var(--card-r) 0}
+.ed h4{font-size:.72rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;margin-bottom:16px}
+.ed .e h4{color:var(--muted)}
+.ed .d h4{color:var(--lilac)}
+.ed p{font-size:1.02rem;line-height:1.65}
+.ed p+p{margin-top:12px}
+.ed ul{margin:0;padding-left:18px}
+.ed li{font-size:1rem;line-height:1.6;margin-top:10px}
+.ed li:first-child{margin-top:0}
+@media(max-width:820px){.ed{grid-template-columns:1fr}
+ .ed>div{padding:26px 0 28px}
+ .ed>div+div{border-top:1px solid var(--line);padding:26px 22px 28px;border-radius:0 0 var(--card-r) var(--card-r)}}
+
+/* ---------- ledger / tables ---------- */
+.ledger{width:100%;border-collapse:collapse}
+.ledger caption{text-align:left;font-size:.72rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);padding-bottom:14px}
+.ledger th{text-align:left;font-size:.7rem;font-weight:500;letter-spacing:.13em;text-transform:uppercase;color:var(--lime);padding:0 26px 14px 0;border-bottom:1px solid var(--ink);vertical-align:bottom}
+.ledger td{padding:20px 26px 20px 0;border-bottom:1px solid var(--line);vertical-align:top;font-size:.98rem;line-height:1.62}
+.ledger td.k{font-size:1.08rem;font-weight:700;line-height:1.3;width:22%}
+.ledger td.n{font-size:.85rem;color:var(--muted);white-space:nowrap;width:1%}
+.ledger td.m{color:var(--muted)}
+.ledger tr:last-child td{border-bottom:1px solid var(--ink)}
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+@media(max-width:700px){.ledger td.k{width:auto}}
+
+/* ---------- steps ---------- */
+.steps{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
+.steps li{display:grid;grid-template-columns:64px minmax(0,4fr) minmax(0,7fr);gap:10px 40px;padding:28px 0;border-bottom:1px solid var(--line)}
+.steps .n{font-size:.85rem;font-weight:700;color:var(--lime);padding-top:6px}
+.steps h4{font-size:1.25rem;line-height:1.25}
+.steps p{font-size:1rem;line-height:1.65;color:var(--muted)}
+@media(max-width:760px){.steps li{grid-template-columns:44px minmax(0,1fr);gap:6px 16px}.steps p{grid-column:2}}
+
+/* ---------- figures ---------- */
+figure{margin:0}
+.fig{margin-top:clamp(28px,4vw,52px)}
+.fig .frame{border:1px solid var(--line);background:var(--card);border-radius:var(--card-r);overflow:hidden}
+.fig .frame.bare{border:none;background:none}
+.fig img{width:100%;height:auto}
+.fig figcaption{display:grid;grid-template-columns:auto minmax(0,1fr);gap:16px;margin-top:12px;font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase}
+.fig figcaption em{font-style:normal;color:var(--terra-text);font-weight:700}
+.fig figcaption span{text-transform:none;letter-spacing:0;font-size:.82rem;line-height:1.5}
+.fullbleed{width:100%;margin:0}
+.fullbleed img{width:100%;height:clamp(320px,52vh,620px);object-fit:cover;border-radius:var(--card-r)}
+.duo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.quad{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+@media(max-width:900px){.quad{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.duo{grid-template-columns:1fr}.quad{grid-template-columns:1fr}}
+
+/* ---------- charts ---------- */
+.chart{margin-top:8px}
+.chart svg{width:100%;height:auto;display:block;overflow:visible}
+.c-ink{fill:var(--ink)}.c-mut{fill:var(--muted)}.c-slate{fill:var(--slate)}.c-terra{fill:var(--terra)}
+.s-line{stroke:var(--line)}.s-ink{stroke:var(--ink)}.s-strong{stroke:var(--line-strong)}
+.t-lab{font-family:var(--sans);font-size:13px;fill:var(--ink)}
+.t-mut{font-family:var(--sans);font-size:11px;letter-spacing:.06em;fill:var(--muted)}
+.t-val{font-family:var(--sans);font-size:13px;font-weight:700;fill:var(--ink)}
+.t-big{font-family:var(--display);font-size:30px;fill:var(--ink)}
+
+/* ---------- stat strip ---------- */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--card-r);overflow:hidden}
+.stats div{background:var(--bg);padding:24px 20px}
+.stats b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(2.6rem,4vw,3.8rem);line-height:.95;color:var(--accent)}
+.stats span{display:block;font-size:.85rem;color:var(--muted);margin-top:10px;line-height:1.4}
+.stats em{display:block;font-style:normal;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--terra-text);margin-top:8px}
+
+/* ---------- role callout ---------- */
+.role{border-top:1px solid var(--ink);padding-top:24px;display:grid;grid-template-columns:minmax(0,3fr) minmax(0,9fr);gap:16px 40px}
+.role h4{font-size:.72rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--lime)}
+.role p{font-size:1.1rem;line-height:1.7}
+.role ul{margin:14px 0 0;padding:0;list-style:none;columns:2;column-gap:40px}
+.role li{font-size:1rem;line-height:1.5;padding:8px 0;border-top:1px solid var(--line);break-inside:avoid}
+@media(max-width:820px){.role{grid-template-columns:1fr}.role ul{columns:1}}
+
+/* ---------- research artifact cards ---------- */
+.artifact{border:1px solid var(--line-strong);background:var(--card);padding:clamp(24px,3vw,40px);border-radius:var(--card-r);position:relative;overflow:hidden}
+.artifact::before{content:attr(data-doc);position:absolute;top:0;right:0;font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#0d0e0d;background:var(--accent);padding:7px 14px;border-radius:0 0 0 12px}
+.artifact h4{font-size:1.35rem;line-height:1.25;padding-right:90px}
+.artifact .sub{font-size:.95rem;color:var(--muted);margin-top:8px;max-width:60ch}
+.artifact ol{margin:26px 0 0;padding:0;list-style:none;counter-reset:q}
+.artifact ol li{counter-increment:q;display:grid;grid-template-columns:34px minmax(0,1fr);gap:16px;padding:14px 0;border-top:1px solid var(--line)}
+.artifact ol li::before{content:counter(q,decimal-leading-zero);font-size:.78rem;font-weight:700;color:var(--lime);padding-top:3px}
+.artifact ol li span{font-size:1rem;line-height:1.5}
+.artifact .slot{margin-top:24px;border:1px dashed var(--line-strong);border-radius:12px;min-height:150px;display:grid;place-items:center;text-align:center;padding:24px;color:var(--muted)}
+.artifact .slot .t{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.artifact .slot .d{font-size:.9rem;margin-top:10px;max-width:38ch;line-height:1.55}
+.artifact .foot{margin-top:22px;padding-top:14px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted);line-height:1.6}
+.cardset{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+@media(max-width:900px){.cardset{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.cardset{grid-template-columns:1fr}}
+.pcard{border:1px solid var(--line-strong);background:var(--bg);border-radius:var(--card-r);padding:18px}
+.pcard h5{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--terra-text)}
+.pcard ul{margin:14px 0 0;padding:0;list-style:none}
+.pcard li{font-size:.95rem;line-height:1.45;padding:9px 0;border-top:1px solid var(--line)}
+.pcard li.blank{color:var(--muted);font-style:italic}
+
+/* ---------- quote ---------- */
+.pq{border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:clamp(28px,4vw,48px) 0;margin:0}
+.pq blockquote{margin:0;font-weight:500;font-size:clamp(1.4rem,2.6vw,2.2rem);line-height:1.25;letter-spacing:-.01em;max-width:32ch}
+.pq figcaption{margin-top:24px;font-size:.95rem;color:var(--muted);display:flex;align-items:center;gap:14px}
+.pq figcaption img{width:44px;height:44px;border-radius:50%;object-fit:cover;flex:none}
+
+/* ---------- notes ---------- */
+.notes{margin-top:clamp(32px,4vw,52px);padding-top:18px;border-top:1px solid var(--line);display:grid;grid-template-columns:minmax(0,3fr) minmax(0,9fr);gap:12px 40px}
+.notes h4{font-size:.7rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.notes ol{margin:0;padding-left:18px;max-width:80ch}
+.notes li{font-size:.88rem;line-height:1.6;color:var(--muted);margin-top:8px}
+.notes li:first-child{margin-top:0}
+.notes li b{color:var(--ink)}
+@media(max-width:820px){.notes{grid-template-columns:1fr}}
+
+/* ---------- gap flag ---------- */
+.gap{border:1px dashed var(--coral);background:var(--terra-soft);padding:20px 22px;border-radius:12px}
+.gap h4{font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--terra-text)}
+.gap p{font-size:.95rem;line-height:1.6;margin-top:10px;max-width:70ch}
+
+/* ---------- proof links ---------- */
+.proof{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.proof a{display:inline-flex;align-items:center;gap:8px;font-size:.9rem;text-decoration:none;border:1px solid var(--line-strong);border-radius:999px;padding:10px 18px;transition:background .2s,color .2s}
+.proof a:hover{background:var(--lime);color:#0d0e0d;border-color:var(--lime)}
+.proof a svg{width:14px;height:14px}
+
+/* ---------- end nav / footer ---------- */
+.endnav{padding:clamp(56px,7vw,96px) 0 40px}
+.endnav .row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;border-top:1px solid var(--ink);padding-top:26px}
+.endnav a{text-decoration:none}
+.endnav .k{font-size:.7rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.endnav .v{font-family:var(--display);text-transform:uppercase;font-size:clamp(1.8rem,3vw,2.6rem);line-height:.95;margin-top:8px;display:block;transition:color .2s}
+.endnav a:hover .v{color:var(--lime)}
+.endnav .mid-col{text-align:center}
+.endnav .last{text-align:right}
+@media(max-width:760px){.endnav .row{grid-template-columns:1fr;gap:20px}.endnav .mid-col,.endnav .last{text-align:left}}
+.colophon{border-top:1px solid var(--line);margin-top:40px;padding-top:20px;display:flex;flex-wrap:wrap;gap:10px 28px;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.footer-loc{margin:40px 0 0;font-size:.95rem;line-height:1.6;max-width:70ch}
+.footer-loc+.colophon{margin-top:16px}
+
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:.001ms!important;animation-duration:.001ms!important}.pill:hover,.btn:hover{transform:none}}
+
+</style>
+</head>
+<body style="--accent:#d6f56b">
+<a class="sr-only skip" href="#start">Skip to the case study</a>
+<header class="nav">
+  <div class="wrap">
+    <a class="nav__brand" href="index.html" aria-label="Paige Vaughn, back to portfolio home">Paige Vaughn</a>
+    <nav aria-label="Primary">
+      <ul class="nav__links">
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="index.html#approach">Approach</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#experience">Experience</a></li>
+        <li><a class="pill" href="index.html#contact">Let’s talk <span aria-hidden="true">→</span></a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="progress" id="pg"></div>
+</header>
+
+<main id="start">
+
+<section class="hero-type">
+  <div class="wrap">
+    <span class="label">Quantitative consumer insights · Pricing · Product strategy</span>
+    <h1>Which membership should we launch, and at what price?</h1>
+    <p class="deck">A conjoint study built to answer a product decision rather than to demonstrate a
+    method. Consumers said price mattered. Their trade-offs said something else entirely.</p>
+    <div class="rule"></div>
+  </div>
+</section>
+
+<section class="facts">
+  <div class="wrap">
+    <dl class="facts-grid">
+      <div><dt>Role</dt><dd class="lead">Consumer insights analyst</dd>
+        <dd class="meta">Graduate consumer research project, Texas McCombs, 2026</dd></div>
+      <div><dt>Context</dt><dd>Membership businesses routinely set features and price by intuition,
+        then discover the error through churn.</dd></div>
+      <div><dt>Business question</dt><dd class="lead">Which product and price combination captures the
+        most demand - and what are buyers willing to give up to get it?</dd></div>
+      <div><dt>What I owned</dt><ul><li>Survey and concept design</li><li>Conjoint estimation</li><li>Market simulation</li><li>Pricing and portfolio recommendation</li><li>The written report</li></ul></div>
+      <div><dt>Methods</dt><ul><li>Ratings-based conjoint, 20 concepts</li><li>Part-worth utility estimation</li><li>Attribute importance</li><li>First-choice market simulation</li></ul></div>
+    </dl>
+  </div>
+</section>
+
+<div class="dband"><div class="wrap">
+  <p class="disclosure top"><b>Academic study, simulated results.</b> A graduate research project using a
+  graduate-student convenience sample. All shares below are <b>simulated preference shares within this
+  study's sample</b> - not market share, revenue, or the result of a real product launch. The value of
+  the work is the decision logic, not the magnitude of the numbers.</p>
+</div></div>
+
+<section class="ch">
+  <div class="wrap">
+    <div class="ch-head">
+      <span class="ch-num"><i>01</i> Research design</span>
+      <h2>Ask people what they care about and they will tell you price. Ask them to choose and they will
+      show you something else.</h2>
+      <p class="standfirst">Direct importance questions reward socially acceptable answers. Conjoint
+      forces respondents to give something up, which is the only way to observe a trade-off. I built
+      20 realistic membership concepts across four attributes and collected appeal ratings on a
+      seven-point scale, then decomposed those ratings into the value of each individual feature.</p>
+    </div>
+    <div class="scroll">
+    <table class="ledger">
+      <caption>Attributes tested and the decision each one informs</caption>
+      <thead><tr><th>Attribute</th><th>Levels tested</th><th>Business question it answers</th></tr></thead>
+      <tbody>
+        <tr><td class="k">Class type</td><td>Reformer Pilates · Cycling · Yoga</td>
+          <td class="m">Which modality should the product be built around?</td></tr>
+        <tr><td class="k">Monthly price</td><td>$20 · $40 · $60</td>
+          <td class="m">What will the market bear, and how steeply does demand fall?</td></tr>
+        <tr><td class="k">Booking window</td><td>48 hours · 1 week · 2 weeks · 4 weeks</td>
+          <td class="m">How much scheduling flexibility is worth paying for?</td></tr>
+        <tr><td class="k">Classes included</td><td>4 · 8 · 12 · Unlimited</td>
+          <td class="m">Does more volume increase perceived value, or just cost?</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</section>
+
+<section class="ch ground">
+  <div class="wrap">
+    <div class="ch-head">
+      <span class="ch-num"><i>02</i> The finding</span>
+      <h2>What people were buying mattered roughly four times more than what it cost.</h2>
+    </div>
+    <div class="chart"><svg viewBox="0 0 980 346" role="img" aria-label="Relative importance of each membership attribute"><line x1="190.0" y1="0" x2="190.0" y2="306" class="s-line" stroke-width="1"/><text x="190.0" y="328" class="t-mut" text-anchor="middle">0%</text><line x1="297.1" y1="0" x2="297.1" y2="306" class="s-line" stroke-width="1"/><text x="297.1" y="328" class="t-mut" text-anchor="middle">10%</text><line x1="404.3" y1="0" x2="404.3" y2="306" class="s-line" stroke-width="1"/><text x="404.3" y="328" class="t-mut" text-anchor="middle">20%</text><line x1="511.4" y1="0" x2="511.4" y2="306" class="s-line" stroke-width="1"/><text x="511.4" y="328" class="t-mut" text-anchor="middle">30%</text><line x1="618.6" y1="0" x2="618.6" y2="306" class="s-line" stroke-width="1"/><text x="618.6" y="328" class="t-mut" text-anchor="middle">40%</text><line x1="725.7" y1="0" x2="725.7" y2="306" class="s-line" stroke-width="1"/><text x="725.7" y="328" class="t-mut" text-anchor="middle">50%</text><line x1="832.9" y1="0" x2="832.9" y2="306" class="s-line" stroke-width="1"/><text x="832.9" y="328" class="t-mut" text-anchor="middle">60%</text><line x1="940.0" y1="0" x2="940.0" y2="306" class="s-line" stroke-width="1"/><text x="940.0" y="328" class="t-mut" text-anchor="middle">70%</text><text x="172" y="38" class="t-lab" text-anchor="end">Class type</text><rect x="190" y="6" width="675.0" height="54" fill="var(--terra)" opacity="1"/><text x="879.0" y="38" class="t-val">63%</text><text x="172" y="110" class="t-lab" text-anchor="end">Monthly price</text><rect x="190" y="78" width="171.4" height="54" fill="var(--slate)" opacity=".45"/><text x="375.4" y="110" class="t-val">16%</text><text x="172" y="182" class="t-lab" text-anchor="end">Booking window</text><rect x="190" y="150" width="160.7" height="54" fill="var(--slate)" opacity=".45"/><text x="364.7" y="182" class="t-val">15%</text><text x="172" y="254" class="t-lab" text-anchor="end">Classes included</text><rect x="190" y="222" width="64.3" height="54" fill="var(--slate)" opacity=".45"/><text x="268.3" y="254" class="t-val">6%</text><line x1="190" y1="0" x2="190" y2="306" class="s-ink" stroke-width="1.5"/></svg></div>
+    <p class="mono" style="margin-top:22px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;font-size:10.5px">
+      Fig. 01 - Relative importance of each attribute in driving stated preference. See note 1.</p>
+    <div class="bignum" style="margin-top:56px">
+      <b>63%</b>
+      <div class="say">of preference was driven by class type alone.
+        <small>Price, booking flexibility, and class volume together accounted for the rest. In a
+        category where operators compete almost exclusively on discounting, the sample said the
+        modality decision was the one that mattered.</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="ch">
+  <div class="wrap">
+    <div class="ch-head">
+      <span class="ch-num"><i>03</i> Inside each attribute</span>
+      <h2>Direction of preference, level by level.</h2>
+      <p class="standfirst">Importance says which lever moves demand. Part-worth utilities say which
+      setting of that lever to choose.</p>
+    </div>
+    <div class="scroll">
+    <table class="ledger">
+      <thead><tr><th>Attribute</th><th>Preferred</th><th>Weaker</th><th>What it implies</th></tr></thead>
+      <tbody>
+        <tr><td class="k">Class type</td><td><b>Reformer Pilates</b></td><td class="m">Cycling, then yoga</td>
+          <td class="m">Build the flagship product around Pilates. Yoga is not the lead offer.</td></tr>
+        <tr><td class="k">Monthly price</td><td><b>$20</b></td><td class="m">Utility fell consistently as
+          price rose</td><td class="m">No price threshold effect observed - demand is smoothly
+          price-sensitive across the tested range.</td></tr>
+        <tr><td class="k">Booking window</td><td><b>One week</b></td><td class="m">Two and four weeks
+          both reduced preference</td><td class="m">Longer horizons read as restriction, not planning.
+          One week is the ceiling, not the floor.</td></tr>
+        <tr><td class="k">Classes included</td><td><b>Unlimited</b></td><td class="m">Lower counts, but the
+          gap was small</td><td class="m">Unlimited wins on paper and costs the most to deliver, for the
+          least preference gain of any attribute.</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="ed" style="margin-top:52px">
+      <div class="e">
+        <h4>What the evidence says</h4>
+        <p>Consumers prioritized the type of wellness experience over both price and the number of
+        classes included.</p>
+        <p>Class volume had the highest-utility level (unlimited) but the smallest overall influence on
+        choice - the classic signature of an attribute that costs the operator a great deal and buys
+        very little preference.</p>
+      </div>
+      <div class="d">
+        <h4>What I would do about it</h4>
+        <ul>
+          <li>Invest in the right modality before competing on price. The cheapest route to demand here
+          is the product decision, not the discount.</li>
+          <li>Do not lead with unlimited. Fund studio capacity and instructor quality instead, where the
+          preference actually sits.</li>
+          <li>Cap the booking window at one week and treat it as a feature, not a constraint.</li>
+          <li>Treat $20 as an acquisition price, not a permanent one - and test the fall-off above the
+          $60 ceiling before assuming it continues.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="statement ink">
+  <div class="wrap">
+    <span class="label">The decision this enables</span>
+    <p>Get the product right and you can charge less, not more - and still take the market.</p>
+    <p class="attrib">The simulation below tests that claim by introducing the recommended concept into a
+    hypothetical competitive set and recalculating first-choice preference.</p>
+  </div>
+</section>
+
+<section class="ch">
+  <div class="wrap">
+    <div class="ch-head">
+      <span class="ch-num"><i>04</i> Market simulation</span>
+      <h2>What happens when the recommended membership enters the market.</h2>
+      <p class="standfirst">Baseline: a Pilates membership priced at $60 competing against cycling at
+      $40. The cycling product dominates. Introduce reformer Pilates at $20 with a one-week booking
+      window and four classes a month, and the preference structure inverts.</p>
+    </div>
+    <div class="chart"><svg viewBox="0 0 980 352" role="img" aria-label="Simulated preference share before and after introducing the recommended product"><text x="0" y="66.0" class="t-lab">Before</text><rect x="150.0" y="30" width="716.1" height="62" fill="var(--slate)" opacity=".35"/><text x="166.0" y="67" class="t-val" fill="#F3F2EE">93%</text><rect x="866.1" y="30" width="53.9" height="62" fill="var(--slate)" opacity=".8"/><text x="878.1" y="67" class="t-val" fill="#0d0e0d" style="fill:#0d0e0d">7%</text><text x="0" y="196.0" class="t-lab">After</text><rect x="150.0" y="160" width="546.7" height="62" fill="var(--terra)" opacity="1"/><text x="166.0" y="197" class="t-val" style="fill:#0d0e0d">71%</text><rect x="696.7" y="160" width="223.3" height="62" fill="var(--slate)" opacity=".35"/><text x="712.7" y="197" class="t-val" fill="#F3F2EE">29%</text><line x1="150" y1="18" x2="150" y2="284" class="s-ink" stroke-width="1.5"/><rect x="150" y="300" width="11" height="11" fill="var(--terra)" opacity="1"/><text x="169" y="310" class="t-mut">Product A - reformer Pilates, $20/mo (new)</text><rect x="150" y="319" width="11" height="11" fill="var(--slate)" opacity=".35"/><text x="169" y="329" class="t-mut">Product Y - cycling, $40/mo</text><rect x="150" y="338" width="11" height="11" fill="var(--slate)" opacity=".8"/><text x="169" y="348" class="t-mut">Product X - reformer Pilates, $60/mo</text></svg></div>
+    <p class="mono" style="margin-top:22px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;font-size:10.5px">
+      Fig. 02 - First-choice simulated preference share, study sample. See note 2.</p>
+    <div class="ed" style="margin-top:56px">
+      <div class="e">
+        <h4>What the evidence says</h4>
+        <p>The existing Pilates product was not failing because Pilates was unwanted. It was failing
+        because it was priced at $60 in a set where the alternative cost $40.</p>
+        <p>The recommended concept takes <b>71%</b> of simulated first-choice preference and eliminates
+        the incumbent Pilates product entirely.</p>
+      </div>
+      <div class="d">
+        <h4>What I would do about it</h4>
+        <p><b>Launch reformer Pilates at $20/month, one-week booking, four classes.</b> Retire the $60
+        Pilates product rather than repositioning it - the simulation shows it retains no first-choice
+        preference once the new concept exists.</p>
+        <p>Then validate before committing capital: this is a small student sample rating hypothetical
+        concepts. The direction is strong enough to justify a live pricing test; the magnitude is not
+        strong enough to justify a build.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ch ground">
+  <div class="wrap">
+    <div class="ch-head">
+      <span class="ch-num"><i>05</i> Recommendation</span>
+      <h2>One product to launch. One to consider second.</h2>
+    </div>
+    <div class="cols2">
+      <div style="border-top:2px solid var(--terra);padding-top:24px">
+        <span class="kicker" style="color:var(--terra-text)">Launch first</span>
+        <h3 style="font-size:30px;line-height:1.15;margin-top:12px">Reformer Pilates, $20/month</h3>
+        <table class="ledger" style="margin-top:20px">
+          <tbody>
+            <tr><td class="k">Booking</td><td>One week</td></tr>
+            <tr><td class="k">Volume</td><td>4 classes per month</td></tr>
+            <tr><td class="k">Simulated share</td><td><b>71%</b></td></tr>
+          </tbody>
+        </table>
+        <p style="margin-top:18px;font-size:16px;line-height:1.65;color:var(--muted)">Built on the highest
+        -importance attribute at its most preferred level, priced at the point of strongest demand.</p>
+      </div>
+      <div style="border-top:1px solid var(--line-strong);padding-top:24px">
+        <span class="kicker">Consider second</span>
+        <h3 style="font-size:30px;line-height:1.15;margin-top:12px">Yoga, $40/month</h3>
+        <table class="ledger" style="margin-top:20px">
+          <tbody>
+            <tr><td class="k">Booking</td><td>One week</td></tr>
+            <tr><td class="k">Volume</td><td>12 classes per month</td></tr>
+            <tr><td class="k">Simulated share</td><td>≈14%</td></tr>
+          </tbody>
+        </table>
+        <p style="margin-top:18px;font-size:16px;line-height:1.65;color:var(--muted)">A second product
+        broadens the portfolio into the least-preferred modality at a higher price - which is defensible
+        only if it reaches buyers the flagship does not. That is a segmentation question this study was
+        not designed to answer.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ch">
+  <div class="wrap">
+    <div class="ch-head">
+      <span class="ch-num"><i>06</i> What this demonstrates</span>
+      <h2>Reading trade-offs, not reporting averages.</h2>
+    </div>
+    <div class="split">
+      <div class="prose">
+        <p>The analytical work here is standard. The judgment is not. The study produces a finding that
+        contradicts how the category actually behaves - operators discount, while the evidence says the
+        product decision carries four times the weight - and the useful output is a pricing and portfolio
+        recommendation with an explicit validation step attached.</p>
+        <p class="muted">I would rather present a $20 recommendation with its limits stated plainly than
+        a confident number nobody can defend in the room.</p>
+      </div>
+      <div>
+        <div class="stats">
+          <div><b>20</b><span>Membership concepts rated</span></div>
+          <div><b>4</b><span>Attributes decomposed into part-worth utilities</span></div>
+          <div><b>63%</b><span>Of preference driven by a single attribute</span><em>Class type</em></div>
+          <div><b>71%</b><span>Simulated first-choice share, recommended product</span><em>Study sample</em></div>
+        </div>
+      </div>
+    </div>
+    <div class="notes">
+      <h4>Notes &amp; sources</h4>
+      <ol>
+        <li><b>Fig. 01.</b> Class type at 63% is stated in the source study. The remaining three values are
+        read from the study's own importance chart and are approximate.</li>
+        <li><b>Fig. 02.</b> Before: cycling at $40 holds 93% and reformer Pilates at $60 holds 7%. After the
+        recommended concept is added: reformer Pilates at $20 takes 71%, cycling at $40 holds 29%, and
+        reformer Pilates at $60 falls to 0%. Both sets of shares are reported in the source study. Shares are
+        first-choice simulated preference within the study sample only.</li>
+        <li><b>Sample.</b> Graduate students, convenience sample. Size not recorded in the source
+        document. This constrains every number on this page and is the first thing a reader should be
+        told.</li>
+        <li><b>Method.</b> Ratings-based conjoint, seven-point appeal scale, 20 profiles. Analysis and
+        simulation in Excel.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="endnav">
+  <div class="wrap">
+    <div class="row">
+      <a href="index.html"><span class="k">Back to</span><span class="v">The full portfolio</span></a>
+      <div class="mid-col"><span class="k">Case study</span><span class="v">01 / 07</span></div>
+      <a class="last" href="oura-member-value.html"><span class="k">Next case</span><span class="v">Oura member value</span></a>
+    </div>
+    <p class="footer-loc">Based in Austin, Texas. Open to in-house roles in Austin, Seattle, San Diego, or remote across the U.S., and to hybrid or in-office roles within commuting distance of those markets.</p>
+    <div class="colophon">
+      <span>Paige Vaughn - Austin, Texas</span>
+      <span>Wellness membership · Pricing &amp; conjoint · 2026</span>
+      <span>Last updated September 2026</span>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){
+  var pg=document.getElementById('pg');
+  function t(){var h=document.documentElement;var m=h.scrollHeight-h.clientHeight;
+    pg.style.width=(m>0?(h.scrollTop||document.body.scrollTop)/m*100:0)+'%';}
+  document.addEventListener('scroll',t,{passive:true});t();
+})();
+</script>
+</body>
+</html>

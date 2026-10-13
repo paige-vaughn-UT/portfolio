@@ -1,0 +1,32 @@
+# Search engines and AI answer engines are welcome. Everything is public by design.
+User-agent: *
+Allow: /
+
+# AI search and citation crawlers
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: Claude-SearchBot
+Allow: /
+User-agent: Claude-User
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Perplexity-User
+Allow: /
+User-agent: Googlebot
+Allow: /
+User-agent: Bingbot
+Allow: /
+
+# Model-training crawlers (allowed so AI models can learn who Paige is; change to Disallow to opt out)
+User-agent: GPTBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+
+# Add after the domain is set:
+# Sitemap: https://YOUR-DOMAIN/sitemap.xml
